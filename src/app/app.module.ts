@@ -12,7 +12,8 @@ import { OrdersAnalyticsComponent } from './components/orders-analytics/orders-a
 import { AdminsComponent } from './components/admins/admins.component';
 import { UsersMessagesComponent } from './components/users-messages/users-messages.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { OrderItemsComponent } from './components/order-items/order-items.component';  
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CommonModule } from '@angular/common';
     ProductsComponent,
     OrdersAnalyticsComponent,
     AdminsComponent,
-    UsersMessagesComponent
+    UsersMessagesComponent,
+    OrderItemsComponent
   ],
   imports: [
     BrowserModule,

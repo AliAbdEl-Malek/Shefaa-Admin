@@ -19,16 +19,36 @@ export class OrdersComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-    this._apiService.get("order/get/delivered").subscribe((response) => {
+    //call to get all deliverd orders
+    interval(20000).pipe(
+      startWith(0),
+      switchMap(() => this._adminService.getPreviousOrders())
+    ).subscribe((response) => {
       let obj = response as APIResponse
       if (obj.status) {
         this.orders = obj.Data
-        console.log("Retrieved Orders Data",obj.Data);
+        console.log(this.orders);
       } else {
-        console.log("Response from getting orders ",obj.message)
+        console.log(obj.message)
       }
     })
+
+    // //call to get all deliverd orders
+    // this._apiService.get('order/admin/deliverd').subscribe((response) => {
+    //   let obj = response as APIResponse
+    //   if (obj.status) {
+    //     this.orders = obj.Data
+    //     console.log(this.orders);
+    //   } else {
+    //     console.log(obj.message)
+    //   }
+    // })
+
+
   }
+
+
+
+
 
 }

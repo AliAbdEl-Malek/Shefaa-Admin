@@ -7,6 +7,7 @@ import { PartnersComponent } from './components/partners/partners.component';
 import { UsersComponent } from './components/users/users.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OrderItemsComponent } from './components/order-items/order-items.component';
 
 const routes: Routes = [
   
@@ -18,6 +19,8 @@ const routes: Routes = [
     { path: '', component: OrdersComponent },
     { path: 'ordersanalytics', component: OrdersAnalyticsComponent },
     { path: 'usersMessages', component: UsersMessagesComponent },
+    {path:'items', component:OrderItemsComponent},
+
     { path: 'registeration',
       loadChildren: () => import('../app/components/registeration/registeration.module').then(m => m.RegisterationModule)
     },

@@ -23,8 +23,7 @@
                     <td>{{currentIndex+1}}</td>
                     <!-- <td>{{order._id}}</td>
                     <td> {{order.createdAt | date:'short'}}</td> -->
-                    <td><a [routerLink]="['/orders/items']" [queryParams]="{IDs: order.order}"
-                            routerLinkActive="router-link-active" type="button" class="btn ">Show </a></td>
+                    <td><a [routerLink]="['/items']" [queryParams]="{IDs: order.products}" routerLinkActive="router-link-active" style="background-color: #32c69a; color: white;" type="button" class="btn">Show </a></td>
                     <td>{{order.totalPrice}}</td>
                     <td>{{order.customer.name}}</td>
                     <td>{{order.customer.address}}</td>

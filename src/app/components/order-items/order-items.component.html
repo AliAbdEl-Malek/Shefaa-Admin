@@ -1,0 +1,30 @@
+<app-header></app-header> <br><br>
+<div class="container-fluid">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-5  justify-content-center align-self-center">
+
+        <div class="col-sm-3 m-2  " *ngFor="let product of products;">
+            <div>
+                <div class="card shadow h-100 " id="product-card">
+                    <img src={{product.photoURL}} alt="" class="card-img-top" style="width:100%;height: 15rem;">
+                    <div class="card-body">
+                        <h5 class="card-text"><b><i>{{product.price}} L.E</i></b></h5>
+                        <p class="card-title">{{product.name}}</p>
+                        <p class="card-title"> In Stock: <strong style="color: red;"> {{product.quantity}} </strong> pieces</p>
+
+                        <!-- <br>
+                <a [routerLink]="['/products/details']" [queryParams]="{ID: product._id}" routerLinkActive="router-link-active" style="color:#404040;text-decoration: underline;">Details</a>
+                <br> -->
+                        <!-- <button (click)="addToCart(product._id)" class="btn btn-outline-light btn-sm" id="add-btn">Add to
+                    Cart</button>
+                <a (click)="addToFavourite(product._id)" class="btn btn-outline-danger btn-sm" id="heart"><i class="fa fa-heart"
+                        aria-hidden="true"></i>
+                </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br> <br>
+<app-footer></app-footer>

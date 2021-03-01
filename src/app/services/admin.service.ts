@@ -47,7 +47,7 @@ export class AdminService {
 
   getPreviousOrders(): Observable<any> {
     let token:any = this.getToken()
-    return this.httpClient.get(`${environment.APIURL}/order/user/delivered`,{headers:{'authorization':token}});
+    return this.httpClient.get(`${environment.APIURL}/order/admin/deliverd`,{headers:{'authorization':token}});
   }
 
 
