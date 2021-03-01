@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div style="margin-top: 80px;">
+    <h2 class="d-flex justify-content-center" style="color: #838383;">Contacts & Messages</h2>
+    <div class="card shadow m-4 p-2" style="background-color: #f4f8fb; border: 2px solid #32c69a; border-radius: 30px;" *ngFor="let websiteMessage of websiteMessages;let currentIndex=index">
+        <div class="row pt-2 pb-0 justify-content-center" style="font-size: 15px;">
+            <div class="col-sm-2">
+                <div class="card-body py-1 text-center" style="background-color: #838383; color: white; border-radius: 30px;">Name : {{websiteMessage.name}}</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card-body py-1 text-center" style="background-color: #838383; color: white; border-radius: 30px;">Email : {{websiteMessage.email}}</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card-body py-1 text-center" style="background-color: #838383; color: white; border-radius: 30px;">Phone : {{websiteMessage.phone}}</div>
+            </div>
+        </div>
+        <div class="row pt-2 pb-0 " style="font-size: 20px;">
+            <div class="card-body py-1 text-center" style="color: #32c69a;"><span style="color: #838383;">Subject : </span>{{websiteMessage.subject}}</div>
+        </div>
+        <div class="row pt-2 pb-0 " style="font-size: 18px;">
+            <div class="card-body py-1 text-center" style="color: #32c69a;"><span style="color: #838383;">Content : </span>{{websiteMessage.messageContent}}</div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="row pt-2 pb-0 justify-content-center">
+            <div class="col-sm-8">
+                <div class="card-body py-1 px-0 text-center"><textarea style="width: 800px;" placeholder="type your replay"></textarea></div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card-body py-1 px-0 text-center"><a class="btn btn-outline-secondary m-1">Replay</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

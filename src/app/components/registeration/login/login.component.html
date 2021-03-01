@@ -1,0 +1,76 @@
+<div class="container-fliud  ">
+    <div class="headerbg">
+        <div class="overlay">
+            <div class=" card  justify-content-center align-self-center shadow mt-5 d-none d-md-flex">
+                <h4 class="text-center greeting justify-content-center">Great to have you back!</h4>
+                <form [formGroup]="formGroup" class="m-3">
+                    <div class="form-group">
+                        <!-- <label for="email">Email address</label> -->
+                        <input formControlName="email" type="email" [value]="emailValue" class="form-control"
+                            placeholder="Enter your email" id="email">
+                        <div *ngIf="formGroup.controls['email'].invalid && formGroup.controls['email'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('required')">Email is required!</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('email')">invalid Email !</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('minLength')">min length is 10</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('maxlength')">max length is 50</small>
+                        </div>
+                    </div> <br>
+
+                    <div class="form-group">
+                        <!-- <label for="pwd">Password</label> -->
+                        <input formControlName="password" type="password" class="form-control"placeholder="Enter password" id="pwd">
+                        <div *ngIf="formGroup.controls['password'].invalid && formGroup.controls['password'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['password'].hasError('required')">Password is required!</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <!-- <label class="form-check-label">
+                        <input class="form-check-input" #checkbox (change)="isChecked(checkbox.checked)" type="checkbox"> Remember me
+                        </label> -->
+                        <span> <a class="link d-none d-md-block" [routerLink]="['/registeration/forgetPassword']" routerLinkActive="router-link-active">Forget Password?</a> </span>
+                    </div><br><br>
+
+                    <button [disabled]="formGroup.invalid" type="submit" (click)=login()
+                        class="btn btn-outline-primary btn-block">Login</button><br>
+                    <p class="d-none d-md-block">New here? <a class="link" [routerLink]="['/registeration/signup']" routerLinkActive="router-link-active">Create new account</a></p>
+                </form>
+            </div>
+            <div class=" card-small  justify-content-center align-self-center shadow mx-auto d-flex d-md-none">
+                <h6 class="text-center greeting justify-content-center">Great to have you back!</h6>
+                <form [formGroup]="formGroup" class="m-3">
+                    <div class="form-group">
+                        <!-- <label for="email">Email address</label> -->
+                        <input formControlName="email" type="email" [value]="emailValue" class="form-control" placeholder="Enter your email" id="email">
+                        <div *ngIf="formGroup.controls['email'].invalid && formGroup.controls['email'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('required')">Email is required!</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('email')">invalid Email !</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('minLength')">min length is 10</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('maxlength')">max length is 50</small>
+                        </div>
+                    </div> <br>
+
+                    <div class="form-group">
+                        <!-- <label for="pwd">Password</label> -->
+                        <input formControlName="password" type="password" class="form-control" placeholder="Enter password" id="pwd">
+                        <div *ngIf="formGroup.controls['password'].invalid && formGroup.controls['password'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['password'].hasError('required')">Password is required!</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <!-- <label class="form-check-label">
+                        <input class="form-check-input" #checkbox (change)="isChecked(checkbox.checked)" type="checkbox"> Remember me
+                        </label> -->
+                        <span> <a class="link d-block d-md-none" style="font-size: 13px;" [routerLink]="['/registeration/forgetPassword']" routerLinkActive="router-link-active">Forget Password?</a> </span>
+                    </div> <br> <br>
+
+                    <div class="text-center"><button [disabled]="formGroup.invalid" type="submit" (click)=login() class="btn btn-outline-primary">Login</button></div><br>
+                    <p class="d-block d-md-none" style="font-size: 13px;" >New here? <a class="link" [routerLink]="['/registeration/signup']" routerLinkActive="router-link-active">Create new account</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <app-registeration-footer></app-registeration-footer> -->

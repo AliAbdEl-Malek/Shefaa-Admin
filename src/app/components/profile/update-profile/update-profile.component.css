@@ -1,0 +1,7 @@
+.custom-label:hover {
+    cursor: pointer;
+}
+
+.custom-label {
+    color: blue;
+}

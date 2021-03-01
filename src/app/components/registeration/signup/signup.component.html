@@ -1,0 +1,98 @@
+<!-- sign up card -->
+<div class="container-fliud  ">
+    <div class="headerbg">
+        <div class="overlay">
+            <div class=" card  justify-content-center align-self-center shadow mt-5 d-none d-md-flex">
+                <div class="text-center">
+                    <h2 class="large-text">Great to see you! </h2>
+                    <p class="small-text">Let’s set up your account in just a couple of steps.</p>
+                    <button type="button" (click)="googleSignup()" class="btn text-white" style="background-color: #32c69a;"> <i class="fa fa-google"></i> &nbsp; Sign up with Google </button>
+                </div> <br>
+                <!-- <div class="text-center color col-sm">
+                ___________________ or _____________________
+                href="http://localhost:3000/auth/google"
+                </div> <br> -->
+                <form [formGroup]="formGroup" action="/" class="col-sm">
+
+                    <div class="form-group has-user ">
+                        <span class="fa fa-user form-control-feedback"></span>
+                        <input formControlName="name" type="text" class="form-control" id="text" placeholder="Enter your Name" name="name">
+                        <div *ngIf="formGroup.controls['name'].invalid && formGroup.controls['name'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('required')">Name is required!</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('minlength')">min length is 8</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('maxlength')">max length is 25</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-mail">
+                        <span class="fa fa-envelope form-control-feedback"></span>
+                        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter your email" name="email">
+                        <div *ngIf="formGroup.controls['email'].invalid && formGroup.controls['email'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('required')">Email is required!</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('email')">invalid1</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('minLength')">min length is 10</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('maxlength')">max length is 50</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-key">
+                        <span class="fa fa-key form-control-feedback"></span>
+                        <input formControlName="password" type="password" class="form-control" id="pwd" placeholder="Enter password" Name="pswd">
+                        <div *ngIf="formGroup.controls['password'].invalid && formGroup.controls['password'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['password'].hasError('required')">Password is required!</small>
+                        </div>
+                    </div>
+
+                    <div class="text-center"><button [disabled]="formGroup.invalid" type="submit" (click)=addAdmin() class="btn btn-outline-info mb-3">Sign up</button></div>
+                    <p class="small-text">Already got an account? &nbsp; <a class="link" [routerLink]="['/registeration/login']" routerLinkActive="router-link-active">Login here</a></p>
+                </form>
+            </div>
+            <div class=" card-small  justify-content-center align-self-center shadow mx-auto d-flex d-md-none">
+                <div class="text-center">
+                    <h5 class="large-text mt-2">Great to see you! </h5>
+                    <p class="small-text" style="font-size: 10px;">Let’s set up your account in just a couple of steps.</p>
+                    <a type="button" href="http://localhost:3000/auth/google" class="btn text-white mb-3" style="font-size: 12px; background-color: #32c69a;"> <i class="fa fa-google"></i> &nbsp; Sign up with Google </a>
+                </div>
+
+                <form [formGroup]="formGroup" action="/" class="col-sm">
+                    <div class="form-group has-user ">
+                        <span class="fa fa-user form-control-feedback"></span>
+                        <input formControlName="name" type="text" class="form-control" id="text" placeholder="Enter your Name" name="name">
+                        <div *ngIf="formGroup.controls['name'].invalid && formGroup.controls['name'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('required')">Name is required!</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('minlength')">min length is 8</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('maxlength')">max length is 25</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-mail">
+                        <span class="fa fa-envelope form-control-feedback"></span>
+                        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter your email" name="email">
+
+                        <div *ngIf="formGroup.controls['email'].invalid && formGroup.controls['email'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('required')">Email is required!</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('email')">invalid1</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('minLength')">min length is 10</small>
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('maxlength')">max length is 50</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-key">
+                        <span class="fa fa-key form-control-feedback"></span>
+                        <input formControlName="password" type="password" class="form-control" id="pwd" placeholder="Enter password" Name="pswd">
+
+                        <div *ngIf="formGroup.controls['password'].invalid && formGroup.controls['password'].dirty">
+                            <small class="form-text text-danger" *ngIf="formGroup.controls['password'].hasError('required')">Password is required!</small>
+                        </div>
+                    </div>
+
+                    <div class="text-center"><button [disabled]="formGroup.invalid" type="submit" (click)=addAdmin() class="btn btn-outline-info mb-3">Sign up</button></div>
+                    <p class="small-text" style="font-size: 13px;">Already got an account? &nbsp; <a class="link" [routerLink]="['/registeration/login']" routerLinkActive="router-link-active">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- sign up card -->
+
+<!-- <app-registeration-footer></app-registeration-footer> -->

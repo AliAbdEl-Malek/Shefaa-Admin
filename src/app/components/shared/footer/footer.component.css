@@ -1,0 +1,38 @@
+h3 {
+    color: #404040;
+    /* font-family: Niveau Grotesk; */
+}
+
+ul {
+    padding: 0;
+    margin: auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #32c69a;
+}
+
+.gmail:hover {
+    color: rgb(180, 0, 0);
+}
+
+.twitter:hover {
+    color: darkturquoise;
+}
+
+.facebook:hover {
+    color: royalblue;
+}
+
+.linkedin:hover {
+    color: blue;
+}

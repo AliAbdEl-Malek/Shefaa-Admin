@@ -1,0 +1,108 @@
+<app-header></app-header>
+
+<div style="margin-top: 80px;">
+  <h2 class="d-flex justify-content-center" style="color: #838383;">Users Details</h2>
+  <div class="card shadow m-4 p-2" *ngFor="let user of users;let currentIndex=index">
+      <div class="row pt-2 pb-0 ">
+          <div class="col-sm-4">
+                <div class="card-body py-1 text-center">
+                  <h2 class="card-title d-block d-sm-none mb-1" style="color: #404040;"> {{user.name}}</h2>
+                  <h6 class="card-title d-none d-sm-block d-md-none mb-4" style="color: #404040;">{{user.name}}</h6>
+                  <h3 class="card-title  d-none d-md-block mb-4" style="color: #404040;">{{user.name}}</h3>
+                  <img class="card-img my-1 rounded-circle" src="http://localhost:3000/{{user.photoURL}}" style="width: 135px; height: 135px;" alt="">
+                  <br><br><br>
+                  <a (click)="delete(user.id,currentIndex)" class="btn btn-outline-secondary m-1">Delete</a>
+                </div>
+          </div>
+          <div class="col-sm-8 d-block d-sm-none px-4">
+                <div class="dropdown-divider"></div>
+                <div class="card-title mb-1" style="color: #32c69a; font-size: 18px;">Email Address </div>
+                <div class="card-body py-1" style="background-color: #f4f8fb; color: #838383;">
+                    {{user.email}}
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="card-title mb-1" style="color: #32c69a; font-size: 18px;">Phone Number </div>
+                <div class="card-body py-1" style="background-color: #f4f8fb; color: #838383;">
+                    {{user.phone}}
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="card-title mb-1" style="color: #32c69a; font-size: 18px;">Address </div>
+                <div class="card-body py-1" style="background-color: #f4f8fb; color: #838383;">
+                    {{user.address}}
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="card-title mb-1" style="color: #32c69a; font-size: 18px;">Orders Number </div>
+                <div class="card-body py-1" style="background-color: #f4f8fb; color: #838383;">
+                    {{user.orders}}
+                </div>
+                <br>
+          </div>
+          <div class="col-sm-8 d-none d-sm-block" style="border-left: 3px dotted #32c69a;">
+                <div class="card-title mb-1" style="color: #32c69a; font-size: 18px;">Email Address</div>
+                <div class="card-body py-1" style="background-color: #f4f8fb; color: #838383;">
+                    {{user.email}}
+                </div>
+                <br>
+                <div class="card-title mb-1" style="color: #32c69a; font-size: 18px;">Phone Number </div>
+                <div class="card-body py-1" style="background-color: #f4f8fb; color: #838383;">
+                    {{user.phone}}
+                </div>
+                <br>
+                <div class="card-title mb-1" style="color: #32c69a; font-size: 18px;">Address </div>
+                <div class="card-body py-1" style="background-color: #f4f8fb; color: #838383;">
+                    {{user.address}}
+                </div>
+                <br>
+                <div class="card-title mb-1" style="color: #32c69a; font-size: 18px;">Orders Number </div>
+                <div class="card-body py-1" style="background-color: #f4f8fb; color: #838383;">
+                    {{user.orders}}
+                </div>
+                <br>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- <div style="background-color: #f4f8fb; padding-bottom: 190px;" >
+    <div class="mx-5" style="padding-top: 80px;">
+      <h2 style="color: #404040;">Users</h2>
+      <div class="card" >
+          
+          <table class="table table-striped" >
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Edit</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr >
+                  <td></td>
+                  
+  
+                  <td>Name</td>
+  
+  
+                  <td>email</td>
+  
+                  <td>phone</td>
+  
+                  <td>address</td>
+  
+                  <td><button type="button" class="btn btn-warning">Edit</button></td>
+  
+                  <td><button   type="button" class="btn btn-danger">Remove</button></td>
+                </tr>
+                
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+  <app-footer></app-footer>

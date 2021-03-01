@@ -1,0 +1,46 @@
+.grid-fluid {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.footer-block {
+    margin: 0 10px;
+    vertical-align: top;
+}
+
+h3 {
+    color: #838383;
+    font-family: PT Sans,sans-serif;
+}
+
+ul {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 0;
+}
+
+.link {
+    background-color: #838383;
+    color: white;
+    font-weight: 300;
+    z-index: 20;
+    position: relative;
+    border-radius: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.link:hover {
+    background-color: #838383;
+    color: #32c69a;
+    text-decoration: none;
+    border-radius: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+}

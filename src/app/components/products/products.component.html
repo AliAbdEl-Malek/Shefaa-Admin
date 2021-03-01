@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div style="background-color: #f4f8fb; padding-bottom: 190px;" *ngIf="products">
+  <div class="mx-5" style="padding-top: 80px;">
+    <h2 style="color: #838383;">Products</h2>
+    <div class="card" >
+        
+      <table class="table table-striped" >
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            
+            <!-- <th>Remove</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products;let currentIndex=index" >
+            <td>{{currentIndex+1}}</td>
+            
+            <td><img src={{product.photoURL}} style="width: 100px; height: 100px;"></td>
+
+            <td>{{product.name}}</td>
+
+
+            <td>{{product.price}} EGP</td>
+
+            <td>{{product.quantity}}</td>
+
+            <td>{{product.category}}</td>
+
+            
+
+            <!-- <td><button (click)="delete(product._id,currentIndex)"  type="button" class="btn btn-danger">Remove</button></td> -->
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

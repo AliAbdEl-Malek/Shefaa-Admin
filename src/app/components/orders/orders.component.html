@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<div class="container-fluid" style="padding-top: 80px;">
+    <h2 class="text-center" style="color: #838383;">Delivered Orders</h2>
+    <hr>
+    <div class="card">
+
+        <table class="table table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>#</th>
+                    <!-- <th>Order No.</th>
+                    <th>Date</th> -->
+                    <th>Order Items</th>
+                    <th>Total Price</th>
+                    <th> Customer Name</th>
+                    <th> Customer Address</th>
+                    <th> Customer Phone</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let order of orders;let currentIndex=index" class="text-center">
+                <tr>
+                    <td>{{currentIndex+1}}</td>
+                    <!-- <td>{{order._id}}</td>
+                    <td> {{order.createdAt | date:'short'}}</td> -->
+                    <td><a [routerLink]="['/orders/items']" [queryParams]="{IDs: order.order}"
+                            routerLinkActive="router-link-active" type="button" class="btn ">Show </a></td>
+                    <td>{{order.totalPrice}}</td>
+                    <td>{{order.customer.name}}</td>
+                    <td>{{order.customer.address}}</td>
+                    <td>{{order.customer.phone}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+<app-footer></app-footer>

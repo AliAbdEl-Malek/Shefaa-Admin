@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<div class="d-flex justify-content-center edit-page" style="margin-top: 80px;">
+    <div class="col-sm-8 shadow mt-3" style="padding-top: 20px; margin-bottom: 15px; background-color: white">
+
+        <div class="d-flex justify-content-center w-100 ">
+
+            <form [formGroup]="formGroup" *ngIf="admin" style="padding-bottom: 35px;width: 60%;">
+
+                <div class="text-center">
+
+                    <div *ngIf="!isUploadedPhoto">
+                        <img src="http://localhost:3000/{{admin.photoURL}}" style="width: 30%; border-radius: 100%" alt="image">
+                    </div>
+
+                    <div *ngIf="isUploadedPhoto">
+                        <img src="{{url}}" style="width: 30%; border-radius: 100%" alt="image" />
+                    </div>
+
+                    <div class="custom-file">
+                        <input type="file" (change)="onFileChanged($event)" class=" custom-file-input " id="customFile ">
+                        <label class="custom-label" for="customFile ">Choose file</label> <br>
+                    </div>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="name ">Name:</label>
+                    <input type="text" formControlName="name" [(ngModel)]="admin.name" class="form-control " placeholder="Enter Name" id="name " />
+
+                    <div *ngIf="formGroup.controls['name'].invalid && formGroup.controls['name'].dirty">
+                        <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('required')">Name is required!</small>
+                        <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('minlength')">min length is 8</small>
+                        <small class="form-text text-danger" *ngIf="formGroup.controls['name'].hasError('maxlength')">max length is 25</small>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <label for="email ">Email address:</label>
+                    <input type="email" formControlName="email" [(ngModel)]="admin.email" class="form-control " placeholder="Enter email " id="email " />
+
+                    <div *ngIf="formGroup.controls['email'].invalid && formGroup.controls['email'].dirty">
+                        <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('required')">Email is required!</small>
+                        <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('email')">invalid1</small>
+                        <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('minLength')">min length is 10</small>
+                        <small class="form-text text-danger" *ngIf="formGroup.controls['email'].hasError('maxlength')">max length is 50</small>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <label for="mobilenumber ">Mobile Number:</label>
+                    <input type="text" formControlName="phone" [(ngModel)]="admin.phone" class="form-control " placeholder="Mobile Number " id="phone" />
+                </div>
+
+                <div class="form-group ">
+                    <label for="address ">Address:</label>
+                    <input type="text" formControlName="address" [(ngModel)]="admin.address" class="form-control " placeholder="Adderss " id="address " />
+                </div>
+
+                <button [disabled]="formGroup.invalid" (click)="updateAdmin();" class="btn " style="background-color: #32c69a; color: white; margin-top: 5px ">update</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

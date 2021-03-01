@@ -1,0 +1,132 @@
+/* .container {
+    position: relative;
+} */
+
+.headerbg{
+    background: url("https://i.pinimg.com/originals/f7/7a/7a/f77a7a346d6270e63c1489bef6f25a3d.jpg");
+    background-size: cover;
+    position: relative;
+    height: 630px;
+}
+
+.headerbg .overlay{
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(149 218 197 / 60%);
+}
+
+.card {
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+}
+
+.card-small {
+    
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column; 
+    margin-top: 60px;
+    border: 1px solid rgb(224, 221, 221);
+    background-color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 8px;
+}
+
+form {
+    width: auto;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+button[type=button] {
+    text-align: center;
+}
+
+button[type=button]:hover {
+    background-color: #32c69a;
+}
+
+.link {
+    text-decoration: none;
+    color: #32c69a;
+}
+
+button[type=submit]:hover {
+    background-color: #32c69a;
+    color: white;
+}
+
+.color {
+    color: rgb(150, 146, 146);
+}
+
+.has-mail .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-mail span {
+    float: left;
+}
+
+.has-mail .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.has-user .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-user span {
+    float: left;
+}
+
+.has-user .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.has-key .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-key span {
+    float: left;
+}
+
+.has-key .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
