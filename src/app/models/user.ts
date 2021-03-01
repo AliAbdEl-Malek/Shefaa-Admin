@@ -23,6 +23,7 @@ export class User{
     phone:string;
     address:string;
     gender:string;
-    photoURL:string
+    photoURL:string;
+    deactivate:boolean;
 
 }

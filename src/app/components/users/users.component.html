@@ -9,9 +9,19 @@
                   <h2 class="card-title d-block d-sm-none mb-1" style="color: #404040;"> {{user.name}}</h2>
                   <h6 class="card-title d-none d-sm-block d-md-none mb-4" style="color: #404040;">{{user.name}}</h6>
                   <h3 class="card-title  d-none d-md-block mb-4" style="color: #404040;">{{user.name}}</h3>
-                  <img class="card-img my-1 rounded-circle" src="http://localhost:3000/{{user.photoURL}}" style="width: 135px; height: 135px;" alt="">
+                  <img *ngIf="user.photoURL" class="card-img my-1 rounded-circle" src="http://localhost:3000/{{user.photoURL}}" style="width: 135px; height: 135px;" alt="">
+                  <img *ngIf="!user.photoURL" class="card-img my-1 rounded-circle" src="assets/images/userAvatar.jpg" style="width: 135px; height: 135px;" alt="">
                   <br><br><br>
-                  <a (click)="delete(user.id,currentIndex)" class="btn btn-outline-secondary m-1">Delete</a>
+                  <div *ngIf="!user.deactivate">
+                  <a (click)="Deactivate(user.id,currentIndex)" class="btn  btn-danger m-1">Deactivate</a>
+                  </div>
+                  <div *ngIf="user.deactivate">
+                  <a (click)="Activate(user.id,currentIndex)" class="btn  btn-success m-1">Activate</a>
+                  </div>
+                  <!--  
+                  <button (click)="toggle(user.id,currentIndex)" id="bt">
+                    {{buttonName}}
+                </button> -->
                 </div>
           </div>
           <div class="col-sm-8 d-block d-sm-none px-4">

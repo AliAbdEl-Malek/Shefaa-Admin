@@ -38,9 +38,9 @@
             <li class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['/usersMessages']" routerLinkActive="router-link-active"><i class=" px-2"></i> Users Messages</a>
             </li>
-            <li class="nav-item d-block d-md-none">
+            <!-- <li class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['/ordersanalytics']" routerLinkActive="router-link-active"><i class=" px-2"></i> Orders Analytics</a>
-            </li>
+            </li> -->
             <div *ngIf="admin" class="dropdown-divider"></div>
             <li *ngIf="admin" class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['/registeration/logout']" routerLinkActive="router-link-active"><i class="fa fa-times-circle px-2"></i> Log Out</a>
@@ -87,7 +87,7 @@
     <div *ngIf="isLogged" class="d-none d-md-flex">
         <a *ngIf="admin" class="nav-link  py-2 px-1" style="font-size: 30px; color: #f4f8fb;" role="button" data-toggle="dropdown">
             <img *ngIf="admin.photoURL" src="http://localhost:3000/{{admin.photoURL}}" class="rounded-circle" alt="user Image" style="width: 35px; height: 35px;">
-            <img *ngIf="!admin.photoURL" src="assets/images/pp-man.png" class="rounded-circle" alt="user Image" style="width: 35px;">
+            <img *ngIf="!admin.photoURL" src="assets/images/userAvatar.jpg" class="rounded-circle" alt="user Image" style="width: 35px;">
             <span style="font-size: 15px; position: relative; top: -5px;"> {{admin.name}}</span>
         </a>
         <div class="dropdown-menu p-2 dropdown-menu-right">

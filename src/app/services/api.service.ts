@@ -26,6 +26,11 @@ export class ApiService {
     return this.httpClient.put(`${environment.APIURL}/${url}`,admin,{headers:{'authorization':this.token}})
   }
 
+  userActivation(url:string){
+    return this.httpClient.put(`${environment.APIURL}/${url}`,{headers:{'authorization':this.token}})
+  }
+
+
   delete(url:string){
     return this.httpClient.delete(`${environment.APIURL}/${url}`)
   }
